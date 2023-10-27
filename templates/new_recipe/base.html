@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>KFoodRecipe</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <nav>
+     <div class="logo">
+        <h1>KFoodRecipe</h1>
+     </div>
+     <div class="nav_options">
+       <li><a href="/">Home<a/></li>
+       <li><a href="add_recipe/">Add Your Own Recipe</a></li> 
+     </div>
+
+    </nav>
+    {% load static %}
+    <body>
+        {% block body %}{% endblock body %}
+        <script src="" async defer></script>
+    </body>
+
+    <style>
+        {% block style %}{% endblock style %}
+        body{
+            
+            background-image:url("{% static "new_recipe/bg2.jpg" %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            background-size: cover;
+            margin:0px;
+            padding:0px;
+            
+        }
+        nav {
+            background-color: #FFA500; /* Orange color */
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            
+        }
+    
+        .logo h1 {
+            font-size: 1.8rem; /* Larger font size for the logo */
+            margin: 0;
+        }
+    
+        .nav_options {
+            display: flex;
+        }
+    
+        .nav_options li {
+            list-style: none;
+            margin: 0 10px;
+        }
+    
+        .nav_options li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem; /* Larger font size for the options */
+        }
+    
+        .nav_options li a:hover {
+            text-decoration: underline;
+        }
+    
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .logo h1 {
+                font-size: 1.5rem; /* Adjust the logo font size for smaller screens */
+            }
+    
+            .nav_options {
+                flex-direction: column;
+            }
+    
+            .nav_options li {
+                margin: 10px 0;
+            }
+        }
+
+    </style>
+</html>
