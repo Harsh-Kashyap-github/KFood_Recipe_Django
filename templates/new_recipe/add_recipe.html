@@ -1,4 +1,10 @@
 {% extends "new_recipe/base.html" %}
+
+{% block nav %}
+<a href="/logout_page/" class="myButton">LOGOUT</a>
+
+
+{% endblock nav %}
 {% block body %}
 <div class="body2">
 <div class="container">
@@ -27,6 +33,33 @@
 </div>
 {% endblock body %}
 {% block style %}
+
+
+.myButton {
+	box-shadow:inset 0px 2px 5px 0px #cf866c;
+	background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+	background-color:#d0451b;
+	border-radius:6px;
+	border:2px solid #942911;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	padding:11px 19px;
+	text-decoration:none;
+	text-shadow:0px 2px 0px #854629;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+	background-color:#bc3315;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
 
 
 .container {
