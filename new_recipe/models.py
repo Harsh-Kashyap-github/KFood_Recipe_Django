@@ -10,6 +10,5 @@ class recipe(models.Model):
     def __str__(self):
         return self.name
 
-class vegModel(models.Model):
-    isVeg=models.BooleanField(default=False)
+
     

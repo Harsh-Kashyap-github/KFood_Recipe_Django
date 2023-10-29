@@ -1,29 +1,14 @@
 from django.shortcuts import render,redirect
 from new_recipe.models import recipe
-from new_recipe.models import vegModel
+
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(response):
-    check=False
-    r1=recipe.objects.all()
-    if response.method=="GET":
-        isveg=response.GET.get("veg")
-        if isveg:
-            check=True
-            r2=vegModel.objects.all()[0]
-            r2.isVeg=True
-            r1=recipe.objects.filter(op="veg")
-        else:
-              r1=recipe.objects.all()
-              r2=vegModel.objects.all()[0]
-              r2.isVeg=False
-              check=False
-                
-    variable={"recipes":r1,"check":check}
-    
+    r1=recipe.objects.all()       
+    variable={"recipes":r1}
     return render(response,"new_recipe/home.html",variable)
 
 
