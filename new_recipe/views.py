@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.decorators import login_required
 
+global_user=""
 # Create your views here.
 def home(response):
     r1=recipe.objects.all()       
@@ -26,8 +27,8 @@ def add_recipe(response):
         new_recipe.save()
         print("Saved")
         return redirect("/add_recipe/")
-    
-    return render(response,"new_recipe/add_recipe.html")
+    varibale={"usr":global_user}
+    return render(response,"new_recipe/add_recipe.html",varibale)
     
 
 def login_page(response):
@@ -38,6 +39,8 @@ def login_page(response):
         print(username,password,user)
         if user is not None:
             login(response,user)
+            global global_user
+            global_user = username
             return redirect("/add_recipe/")
         
             
@@ -59,6 +62,7 @@ def reg_page(response):
         u.save()
         #login(response,user)
         return redirect("/login_page/")
+    
     
     return render(response,"new_recipe/reg_page.html")
 
